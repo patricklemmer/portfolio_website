@@ -345,6 +345,16 @@ nav {
   height: 150px;
   width: 200px;
 }
+.project i {
+  margin: auto;
+  font-size: 1.5rem;
+}
+.project svg {
+  margin: auto;
+  margin-bottom: 20px;
+  height: 150px;
+  width: 200px;
+}
 .project_link__tags {
   font-family: var(--body-font-family);
   font-size: calc(var(--body-font-size) - 0.1rem);
@@ -370,6 +380,7 @@ nav {
   background-color: var(--primary-color);
   border-radius: 8px;
   padding: 5px 10px;
+  color: var(--text-color);
 }
 .project_link__tags a:visited {
   color: var(--text-color);
@@ -380,6 +391,7 @@ nav {
 .project_link__tags a:active {
   color: var(--text-color);
 }
+
 .project_description {
   font-family: var(--body-font-family);
   font-size: calc(var(--body-font-size) + 0.1rem);
