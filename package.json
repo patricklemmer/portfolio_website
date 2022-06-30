@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://patricklemmer.github.io/portfolio_website",
+  "homepage": "https://patricklemmer.dev",
   "dependencies": {
     "gh-pages": "^4.0.0"
   }
