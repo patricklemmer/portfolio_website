@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "homepage": "https://patricklemmer.dev",
-  "dependencies": {
+  "devDependencies": {
     "gh-pages": "^4.0.0"
   }
 }
