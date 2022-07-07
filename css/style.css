@@ -25,7 +25,6 @@
 /* Following code sets variables for this document */
 
 :root {
-  /* Light colour theme */
   --text-color: #f9f9f9;
   --body-text-color: #dedede;
   --primary-color: #282c34;
@@ -34,13 +33,6 @@
   --accent-color-dark: #282c34;
   --accent-color-special: #ffd479;
   --error-color: #b30;
-  /* Dark colour theme */
-  /*--text-color: #f7f7f7;
-  --primary-color: #282c34;
-  --secondary-color: #1c1e24;
-  --accent-color-light: #fcbf49;
-  --accent-color-dark: #525252;
-  --error-color: #b30; */
   --body-font-family: 'JetBrains Mono', monospace;
   --header-font-family: 'Staatliches', serif;
   --button-font-family: 'Staatliches', serif;
@@ -274,7 +266,7 @@ nav {
 .button_one:hover,
 .button_two:hover,
 .button_three:hover {
-  background-color: var(--accent-color-light);
+  background-color: var(--accent-color-special);
   color: var(--text-color);
 }
 
