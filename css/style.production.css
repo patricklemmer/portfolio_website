@@ -391,7 +391,6 @@ nav {
 .project_link__tags a:active {
   color: var(--text-color);
 }
-
 .project_description {
   font-family: var(--body-font-family);
   font-size: calc(var(--body-font-size) + 0.1rem);
