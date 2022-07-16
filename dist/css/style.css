@@ -33,7 +33,7 @@
   --accent-color-dark: #282c34;
   --accent-color-special: #ffd479;
   --error-color: #b30;
-  --body-font-family: 'JetBrains Mono', monospace;
+  --body-font-family: 'Poppins', sans-serif;
   --header-font-family: 'Staatliches', serif;
   --button-font-family: 'Staatliches', serif;
   /* Base 16px = 1rem */
@@ -324,7 +324,7 @@ nav {
 /* Following code is styling the grid on /about */
 
 .about_container {
-  max-width: 1350px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
@@ -498,7 +498,7 @@ nav {
 .form-horizontal {
   float: left;
   max-width: 400px;
-  font-family: var(--header-font-family);
+  font-family: var(--body-font-family);
   font-weight: 400;
 }
 
@@ -548,7 +548,7 @@ textarea {
 .alt-send-button {
   display: inline-block;
   max-width: 50px;
-  height: 32px;
+  height: 22px;
   margin: auto;
   transition: all 0.2s ease-in-out;
 }
@@ -561,7 +561,7 @@ textarea {
   margin: auto;
   letter-spacing: 2px;
   position: absolute;
-  bottom: -23px;
+  bottom: -29px;
   left: -5px;
 }
 
@@ -587,6 +587,8 @@ textarea {
   list-style-type: none;
   width: 100% /* margin-left: -30px; */ padding-right 20px;
   font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+  padding-left: 30px;
 }
 
 .list-item {
@@ -595,21 +597,20 @@ textarea {
 }
 
 .contact-text {
-  font: 300 18px var(--header-font-family);
-  letter-spacing: 1.9px;
+  font: 300 18px var(--body-font-family);
   color: var(--text-color);
 }
 
 .place {
-  margin-left: 57px;
+  margin-left: 37px;
 }
 
 .phone {
-  margin-left: 56px;
+  margin-left: 36px;
 }
 
 .gmail {
-  margin-left: 56px;
+  margin-left: 36px;
 }
 
 .bi {
@@ -634,7 +635,8 @@ textarea {
 /* Social media icons */
 
 .social-media-list {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   display: flex;
   flex-wrap: row nowrap;
   justify-content: space-evenly;
@@ -663,6 +665,8 @@ textarea {
 } */
 
 hr {
+  margin: auto;
+  width: 80%;
   border-color: var(--accent-color-dark);
 }
 
@@ -967,15 +971,15 @@ footer {
   }
 
   .place {
-    margin-left: 39px;
+    margin-left: 30px;
   }
 
   .phone {
-    margin-left: 37px;
+    margin-left: 30px;
   }
 
   .gmail {
-    margin-left: 36px;
+    margin-left: 30px;
   }
 
   .direct-contact-container {
@@ -997,6 +1001,11 @@ footer {
     width: 60px;
     height: 60px;
     line-height: 60px;
+  }
+
+  hr {
+    margin: auto;
+    width: 80%;
   }
 
   #contact {
@@ -1044,15 +1053,15 @@ footer {
   }
 
   .place {
-    margin-left: 39px;
+    margin-left: 29px;
   }
 
   .phone {
-    margin-left: 37px;
+    margin-left: 27px;
   }
 
   .gmail {
-    margin-left: 36px;
+    margin-left: 26px;
   }
 
   .direct-contact-container {
@@ -1069,7 +1078,7 @@ footer {
     margin-top: 20px;
     display: flex;
     flex-wrap: row nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
   }
 
@@ -1077,6 +1086,11 @@ footer {
     height: 50px;
     width: 50px;
     list-style: none;
+  }
+
+  hr {
+    margin: auto;
+    width: 80%;
   }
 
   /* .social-media-list li {
