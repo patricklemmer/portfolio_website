@@ -62,6 +62,7 @@ body {
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
 }
 
 a {
@@ -83,7 +84,7 @@ body {
 .header_container {
   font-family: var(--header-font-family);
   font-size: var(--h1-font-size);
-  max-width: 1350px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -126,7 +127,7 @@ nav {
   justify-content: space-around;
   width: 100%;
   align-items: center;
-  min-height: 8vh;
+  min-height: 10vh;
 }
 
 .logo {
@@ -196,6 +197,7 @@ nav {
   height: 3px;
   margin: 5px;
   transition: all 0.3s ease;
+  z-index: 9;
 }
 
 /* Beginn home page - home */
@@ -207,8 +209,6 @@ nav {
   margin-top: 15vh;
   margin-bottom: 15vh;
   max-width: 1280px;
-  display: flex;
-  flex-flow: column nowrap;
 }
 
 /* Following code is styling the intro and animation/image section on /home (temporary styling until text animation (code below) is ready) */
@@ -303,20 +303,6 @@ nav {
   text-decoration-color: var(--accent-color-special);
 }
 
-/* Following code is styling the info text box on /home */
-
-.info_block {
-  background-color: var(--secondary-color);
-  margin: auto;
-  margin-top: 100px;
-  margin-bottom: 50px;
-  height: auto;
-  max-width: 600px;
-  padding: 30px;
-  border: 1px solid var(--secondary-color);
-  border-radius: 8px;
-}
-
 /* End /home page code */
 
 /* Beginn about page - about */
@@ -372,7 +358,7 @@ nav {
 /* Beginn projects page - portfolio */
 
 .projects_container {
-  max-width: 1350px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
@@ -402,6 +388,7 @@ nav {
 .project img {
   margin: auto;
   margin-bottom: 20px;
+  /* margin-top: 0px; */
   height: 150px;
   width: 200px;
 }
@@ -427,7 +414,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: 200px;
+  width: 250px;
 }
 
 .project_link__tags a {
@@ -474,8 +461,8 @@ nav {
   max-width: 1350px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15vh;
-  margin-bottom: 30vh;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
 }
 
 /* Following code is styling the contact form */
@@ -488,7 +475,7 @@ nav {
   padding: 50px 40px;
   position: relative;
   max-width: 840px;
-  border-radius: 20px;
+  border-radius: 6px;
   background-color: var(--secondary-color);
   border: 1px solid var(--accent-color-dark);
 }
@@ -585,9 +572,9 @@ textarea {
 
 .contact-list {
   list-style-type: none;
-  width: 100% /* margin-left: -30px; */ padding-right 20px;
+  width: 100%;
   font-size: var(--body-font-size);
-  font-family: var(--body-font-family);
+  font-family: var(--header-font-family);
   padding-left: 30px;
 }
 
@@ -624,7 +611,6 @@ textarea {
 .contact-text a {
   color: var(--text-color);
   text-decoration: none;
-  transition-duration: 0.2s;
 }
 
 .contact-text a:hover {
@@ -651,18 +637,6 @@ textarea {
 .social-media-list li a {
   color: var(--accent-color-light);
 }
-
-/* .social-media-list li {
-  position: relative;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  margin: 12px 3px;
-  line-height: 60px;
-  border-radius: 50%;
-  color: var(--accent-color-light);
-  cursor: pointer;
-} */
 
 hr {
   margin: auto;
@@ -691,24 +665,34 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: sticky;
   width: 100%;
-  height: 8vh;
+  height: 12vh;
   bottom: 0;
 }
 
 .footer-text p {
   font-family: var(--header-font-family);
-  font-size: calc(var(--body-font-size) - 1px);
+  font-size: calc(var(--body-font-size) - 5px);
+  letter-spacing: 3px;
   color: var(--text-color);
   text-transform: uppercase;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .footer_icons {
   text-align: center;
+}
+
+.footer_icons svg {
+  margin: 7px;
+}
+
+.white {
+  fill: #dedede;
 }
 
 /* Begin media queries - mediaq */
