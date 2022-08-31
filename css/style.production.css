@@ -1,37 +1,36 @@
-.header_container,
-body,
-html {
-  margin-left: auto;
-  margin-right: auto;
-}
-.nav-links,
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-}
-.button_navbar,
-body {
-  background-color: var(--primary-color);
-}
-#text-underline,
-.header_description a,
-.header_description a:visited {
-  -webkit-text-decoration-color: var(--accent-color-special);
-  text-decoration-color: var(--accent-color-special);
-}
-.about li,
-.about p {
-  line-height: var(--line-height);
-}
-.about ul,
-.nav-links li,
-.social-media-list li {
-  list-style: none;
-}
-.footer-text p,
-.logo {
-  text-transform: uppercase;
-}
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* Order of document (consistently updated) */
+
+/* 
+
+1. Root variables    ->   (root)
+2. Global code       ->   (global)
+3. Local code        ->   (local)
+3.1 Navbar           ->   (navbar)
+3.2. /home           ->   (home)
+3.3. /about-me       ->   (about)
+3.4. /portfolio      ->   (portfolio)
+3.5. /contact        ->   (contact)
+3.6. Footer          ->   (footer)
+4. Media queries     ->   (mediaq)
+4.1. Navbar          ->   (mediaq_navbar)
+4.2. /home           ->   (mediaq_home)
+4.3. /contact        ->   (mediaq_contact)
+
+--- use keyword in brackets with cmd+f to jump to each section ---
+
+*/
+
+/* Begin root variables - root */
+
+/* Following code sets variables for this document */
+
 :root {
   --text-color: #f9f9f9;
   --body-text-color: #dedede;
@@ -44,6 +43,7 @@ body {
   --body-font-family: 'Poppins', sans-serif;
   --header-font-family: 'Staatliches', serif;
   --button-font-family: 'Staatliches', serif;
+  /* Base 16px = 1rem */
   --body-font-size: 1rem;
   --h1-font-size: 2rem;
   --h2-font-size: 1.5rem;
@@ -53,67 +53,88 @@ body {
   --h6-font-size: 0.75rem;
   --line-height: 1.40625rem;
 }
+
+/* Begin of global code - global */
+
+/* General code */
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-body,
-html {
+
+html,
+body {
   height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
   overflow-x: hidden;
 }
-.logo a,
+
 a {
   text-decoration: none;
 }
+
 body {
+  background-color: var(--primary-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
 }
+
+/* Begin of local code - local */
+
+/* Begin shared local code */
+
+/* Page header (/about, /portfolio) */
+
 .header_container {
   font-family: var(--header-font-family);
   font-size: var(--h1-font-size);
   max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   margin-bottom: 40px;
 }
+
 .header_description {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size);
   color: var(--body-text-color);
 }
-.about h3,
-.arrow_text,
-.button_one,
-.button_three,
-.button_two,
-.profile_text,
-.project,
-nav {
-  font-family: var(--header-font-family);
+
+.header_description a {
+  color: var(--body-text-color);
+  text-decoration: underline;
+  -webkit-text-decoration-color: var(--accent-color-special);
+  text-decoration-color: var(--accent-color-special);
+  text-decoration-thickness: 2px;
 }
-.header_description a,
+
 .header_description a:visited {
   color: var(--body-text-color);
   text-decoration: underline;
+  -webkit-text-decoration-color: var(--accent-color-special);
+  text-decoration-color: var(--accent-color-special);
   text-decoration-thickness: 2px;
 }
+
 .header_description a:hover {
   color: var(--secondary-color);
   background-color: var(--accent-color-special);
 }
-.button_navbar,
-.logo,
-.logo a:active,
-.logo a:visited,
-.logo h3,
-.nav-links a {
-  color: var(--text-color);
-}
+
+/* Beginn navbar - navbar */
+
+/* Following code is styling the navbar for screen width of more than 1200px (Media queries for navbar on other screen sizes below) */
+
 nav {
   background-color: var(--secondary-color);
+  font-family: var(--header-font-family);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
   justify-content: space-around;
@@ -123,72 +144,99 @@ nav {
   align-items: center;
   min-height: 10vh;
 }
+
 .logo {
+  color: var(--text-color);
+  text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
 }
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo a:active,
+.logo a:visited {
+  color: var(--text-color);
+}
+
+.logo h3 {
+  color: var(--text-color);
+}
+
 .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 30%;
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
+
+.nav-links li {
+  list-style: none;
+}
+
 .nav-links a {
+  color: var(--text-color);
   text-decoration: none;
   letter-spacing: 3px;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 14px;
 }
-.about h3,
-.nav-links a:hover,
-.project h3 {
+
+.nav-links a:hover {
   color: var(--accent-color-special);
 }
-#text-underline,
-.about h4,
-.about strong {
-  text-decoration: underline;
-}
+
 .button_navbar {
+  background-color: var(--primary-color);
   font-size: var(--body-font-size);
+  color: var(--text-color);
   border-radius: 50px;
   padding: 7px 20px;
   border: 1px solid var(--accent-color-dark);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.button_navbar:hover,
-.button_one,
-.button_three,
-.button_two {
-  color: var(--secondary-color);
+
+.button_navbar:hover {
   background-color: var(--accent-color-special);
+  color: var(--secondary-color);
 }
-.burger,
-.button_three {
+
+.burger {
   display: none;
 }
-.profile,
-.profile_text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  padding: 30px;
-}
+
 .burger div {
   background-color: var(--text-color);
   width: 25px;
   height: 3px;
   margin: 5px;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 9;
 }
+
+/* Beginn home page - home */
+
+/* Following code is styling /home */
+
 .main_home {
-  margin: 15vh auto;
+  margin: auto;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
   max-width: 1280px;
 }
+
+/* Following code is styling the intro and animation/image section on /home (temporary styling until text animation (code below) is ready) */
+
 .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -196,40 +244,54 @@ nav {
   flex-flow: row wrap;
   width: 100%;
   height: auto;
+  padding: 30px;
 }
+
+/* Following code is styling the svg next to the intro text on /home  */
+
 #img {
   margin: auto;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
-.arrow,
+
+/* Following code is styling the intro text on /home; temporary styling; will be replace by text-adjective animation (code below) at later stage */
+
 .profile_text {
-  -ms-flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-}
-.profile_text {
-  display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  font-family: var(--header-font-family);
   margin: auto;
+  padding: 30px;
   -webkit-box-flex: 2;
   -ms-flex-positive: 2;
   flex-grow: 2;
 }
+
 .profile_text_big {
   font-size: calc(var(--body-font-size) + 40px);
 }
+
 .profile_text_small {
   font-size: calc(var(--body-font-size) + 10px);
-  margin: 30px 0 15px;
+  margin: 30px 0px 15px 0px;
 }
+
 .button_one,
-.button_three,
-.button_two {
+.button_two,
+.button_three {
+  background-color: var(--accent-color-special);
+  color: var(--secondary-color);
+  font-family: var(--header-font-family);
   font-size: calc(var(--body-font-size) + 10px);
   border-radius: 8px;
   margin: auto;
@@ -238,91 +300,128 @@ nav {
   -webkit-box-shadow: 1px 1px 2px var(--secondary-color);
   box-shadow: 1px 1px 2px var(--secondary-color);
 }
-.contact-wrapper,
-.project {
-  background-color: var(--secondary-color);
-}
+
 .button_one:hover,
-.button_three:hover,
-.button_two:hover {
+.button_two:hover,
+.button_three:hover {
   background-color: var(--accent-color-special);
   color: var(--text-color);
 }
+
 .button_two {
   margin-left: 15px;
 }
+
+.button_three {
+  display: none;
+}
+
 .arrow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin-top: 15px;
   width: 300px;
 }
+
 .arrow_text {
   font-size: calc(var(--body-font-size) - 1px);
+  font-family: var(--header-font-family);
   color: var(--text-color);
   margin-bottom: 5px;
   margin-left: 20px;
 }
-.about_container,
-.projects_container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .arrow_icon {
   height: 40px;
 }
+
+#text-underline {
+  /* Underlining of adjective in intro text on /home */
+  text-decoration: underline;
+  -webkit-text-decoration-color: var(--accent-color-special);
+  text-decoration-color: var(--accent-color-special);
+}
+
+/* End /home page code */
+
+/* Beginn about page - about */
+
+/* Following code is styling the grid on /about */
+
 .about_container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 40px;
   display: -ms-grid;
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
 }
+
 .about {
   padding: 40px;
   display: block;
 }
+
 .about h3 {
+  font-family: var(--header-font-family);
   font-size: calc(var(--h3-font-size) + 0.5rem);
+  color: var(--accent-color-special);
   text-align: left;
   margin-bottom: 15px;
 }
+
 .about p {
   text-align: left;
   display: block;
+  line-height: var(--line-height);
 }
-.footer-text p,
-.footer_icons,
-.project h3 {
-  text-align: center;
-}
+
 .about h4 {
   margin-top: 30px;
   margin-bottom: 20px;
+  text-decoration: underline;
 }
-.contact-text a,
-.contact-text a:hover {
-  text-decoration: none;
+
+.about ul {
+  list-style: none;
 }
+
+.about li {
+  line-height: var(--line-height);
+}
+
+.about strong {
+  text-decoration: underline;
+}
+
+/* Beginn projects page - portfolio */
+
 .projects_container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 50px;
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
-.project,
-.project_link__tags {
-  display: -webkit-box;
-  display: -ms-flexbox;
-}
+
 .project {
+  font-family: var(--header-font-family);
   font-size: var(--h2-font-size);
   margin: 10px;
-  border: 1px solid #000;
+  border: 1px solid black;
   border-radius: 8px;
+  background-color: var(--secondary-color);
   padding: 30px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -332,34 +431,40 @@ nav {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.error-message,
-.form-horizontal,
-.project_description,
-.project_link__tags {
-  font-family: var(--body-font-family);
-}
+
 .project h3 {
+  color: var(--accent-color-special);
+  text-align: center;
   margin-bottom: 20px;
 }
-.bi,
-.project_link__tags a,
-.project_link__tags a:active,
-.project_link__tags a:visited {
-  color: var(--text-color);
-}
-.project img,
-.project svg {
-  margin: auto auto 20px;
+
+.project img {
+  margin: auto;
+  margin-bottom: 20px;
+  /* margin-top: 0px; */
   height: 150px;
   width: 200px;
 }
+
 .project i {
   margin: auto;
   font-size: 1.5rem;
 }
+
+.project svg {
+  margin: auto;
+  margin-bottom: 20px;
+  height: 150px;
+  width: 200px;
+}
+
 .project_link__tags {
+  font-family: var(--body-font-family);
   font-size: calc(var(--body-font-size) - 0.1rem);
-  margin: auto auto 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -373,42 +478,68 @@ nav {
   justify-content: space-evenly;
   width: 250px;
 }
-.contact-wrapper,
-.project_icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-}
+
 .project_link__tags a {
   border: 1px solid var(--accent-color-dark);
   background-color: var(--primary-color);
   border-radius: 8px;
   padding: 5px 10px;
+  color: var(--text-color);
 }
+
+.project_link__tags a:visited {
+  color: var(--text-color);
+}
+
 .project_link__tags a:hover {
   color: var(--accent-color-special);
 }
+
+.project_link__tags a:active {
+  color: var(--text-color);
+}
+
 .project_description {
+  font-family: var(--body-font-family);
   font-size: calc(var(--body-font-size) + 0.1rem);
   color: var(--body-text-color);
   margin-bottom: 30px;
   text-align: center;
 }
+
 .project_icons {
   color: var(--body-text-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
   width: 200px;
   margin: auto;
 }
+
+/* Beginn contact page - contact */
+
+/* Following code is styling the body on /contact */
+
 #contact {
   max-width: 1350px;
-  margin: 10vh auto 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
 }
+
+/* Following code is styling the contact form */
+
 .contact-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-box-pack: justify;
@@ -419,18 +550,19 @@ nav {
   position: relative;
   max-width: 840px;
   border-radius: 6px;
+  background-color: var(--secondary-color);
   border: 1px solid var(--accent-color-dark);
 }
-.send-button,
-.social-media-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-}
+
+/* Begin left part of contact form */
+
 .form-horizontal {
   float: left;
   max-width: 400px;
+  font-family: var(--body-font-family);
   font-weight: 400;
 }
+
 .form-control,
 textarea {
   background-color: var(--primary-color);
@@ -444,23 +576,26 @@ textarea {
   -webkit-box-shadow: 1px 1px 5px var(--accent-color-dark);
   box-shadow: 1px 1px 5px var(--accent-color-dark);
 }
+
 .form-control {
   line-height: 15px;
 }
+
 textarea {
   padding-top: 3px;
 }
+
 .error-message {
+  font-family: var(--body-font-family);
   font-size: calc(var(--body-font-size) - 6px);
   color: var(--error-color);
   margin-bottom: 5px;
 }
-.contact-list,
-.send-text {
-  font-family: var(--header-font-family);
-}
+
 .send-button {
   background-color: var(--text-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -477,82 +612,108 @@ textarea {
   width: 400px;
   border-radius: 50px;
   overflow: hidden;
-  -webkit-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border: none;
 }
-.alt-send-button,
-.send-text {
-  display: inline-block;
-  margin: auto;
-}
+
 .alt-send-button {
+  display: inline-block;
   max-width: 50px;
   height: 22px;
-  -webkit-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+  margin: auto;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
+
 .send-text {
   color: var(--primary-color);
+  display: inline-block;
+  font-family: var(--header-font-family);
   font-size: calc(var(--body-font-size) - 1px);
+  margin: auto;
   letter-spacing: 2px;
   position: absolute;
   bottom: -29px;
   left: -5px;
 }
+
 .alt-send-button:hover {
-  -webkit-transform: translate3d(0, -30px, 0);
-  transform: translate3d(0, -30px, 0);
+  -webkit-transform: translate3d(0px, -30px, 0px);
+  transform: translate3d(0px, -30px, 0px);
   cursor: pointer;
 }
+
 .bi-send-fill {
   position: relative;
   font-size: 20px;
 }
+
+/* Begin right part of contact form */
+
 .direct-contact-container {
   max-width: 400px;
 }
+
+/* Location, phone, email section */
+
 .contact-list {
   list-style-type: none;
   width: 100%;
   font-size: var(--body-font-size);
+  font-family: var(--header-font-family);
   padding-left: 30px;
 }
+
 .list-item {
   line-height: 4;
   color: #aaa;
 }
+
 .contact-text {
   font: 300 18px var(--body-font-family);
   color: var(--text-color);
 }
-.contact-me-text,
-.footer-text p {
-  font-family: var(--header-font-family);
-}
+
 .place {
   margin-left: 37px;
 }
-.gmail,
+
 .phone {
   margin-left: 36px;
 }
+
+.gmail {
+  margin-left: 36px;
+}
+
+.bi {
+  color: var(--text-color);
+}
+
 .bi-send-fill {
   color: var(--primary-color);
 }
+
 .contact-text a {
   color: var(--text-color);
+  text-decoration: none;
 }
-.contact-text a:hover,
-.social-media-list li,
-.social-media-list li a {
+
+.contact-text a:hover {
   color: var(--accent-color-light);
+  text-decoration: none;
 }
+
+/* Social media icons */
+
 .social-media-list {
   margin-top: 30px;
   margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: row nowrap;
   flex-wrap: row nowrap;
@@ -563,20 +724,31 @@ textarea {
   -ms-flex-align: center;
   align-items: center;
 }
-.contact-me-text,
-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+
+.social-media-list li {
+  list-style: none;
+  color: var(--accent-color-light);
 }
+
+.social-media-list li a {
+  color: var(--accent-color-light);
+}
+
 hr {
   margin: auto;
   width: 80%;
   border-color: var(--accent-color-dark);
 }
+
+/* Text underneath contact form */
+
 .contact-me-text {
+  font-family: var(--header-font-family);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
@@ -588,9 +760,18 @@ hr {
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
+
+/* Beginn footer - footer */
+
+/* Following code is styling the footer */
+
 footer {
   background-color: var(--secondary-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
@@ -604,33 +785,57 @@ footer {
   height: 12vh;
   bottom: 0;
 }
+
 .footer-text p {
+  font-family: var(--header-font-family);
   font-size: calc(var(--body-font-size) - 5px);
   letter-spacing: 3px;
   color: var(--text-color);
+  text-transform: uppercase;
+  text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.footer_icons {
+  text-align: center;
+}
+
 .footer_icons svg {
   margin: 7px;
 }
+
 .white {
   fill: #dedede;
 }
+
+/* Begin media queries - mediaq */
+
+/* Begin media queries navbar - mediaq_navbar */
+
+/* Following code is about navbar for screen width of less than 1201px */
+
 @media screen and (max-width: 1200px) {
   .nav-links {
     width: 45%;
   }
 }
+
+/* Following code is about navbar for screen width of less than 1025px */
+
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 40%;
   }
 }
+
+/* Following code is about navbar for screen width of less than 769px */
+
 @media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
+
   .nav-links {
     background-color: var(--primary-color);
     position: absolute;
@@ -652,215 +857,306 @@ footer {
     -ms-transform: translateX(100%);
     transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.5s ease-in;
-    transition: transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
     -o-transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
     transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
+
   .nav-links li {
     opacity: 0;
   }
+
   .button_navbar {
     display: none;
   }
+
   .burger {
     display: block;
     cursor: pointer;
   }
+
   .button_two {
     margin-left: 0;
     margin-top: 20px;
   }
 }
+
 .nav-active {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
 }
+
 @-webkit-keyframes navLinkFade {
   from {
     opacity: 0;
     -webkit-transform: translateX(50px);
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
   }
 }
+
 @keyframes navLinkFade {
   from {
     opacity: 0;
     -webkit-transform: translateX(50px);
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
   }
 }
+
 .toggle .line1 {
   -webkit-transform: rotate(-45deg) translate(-5px, 6px);
   -ms-transform: rotate(-45deg) translate(-5px, 6px);
   transform: rotate(-45deg) translate(-5px, 6px);
 }
+
 .toggle .line2 {
   opacity: 0;
 }
+
 .toggle .line3 {
   -webkit-transform: rotate(45deg) translate(-5px, -6px);
   -ms-transform: rotate(45deg) translate(-5px, -6px);
   transform: rotate(45deg) translate(-5px, -6px);
 }
+
+/* Begin media queries /home - mediaq_home */
+
+/* Following code takes care of the buttons in the intro section on /home for screen width of less than 1401px */
+
 @media screen and (max-width: 1400px) {
   .main_home {
     max-width: 650px;
-    margin: 7vh auto 11vh;
+    margin: auto;
+    margin-top: 7vh;
+    margin-bottom: 11vh;
   }
+
   .profile_text_big {
     font-size: calc(var(--body-font-size) + 38px);
   }
+
   .profile_text_small {
     font-size: calc(var(--body-font-size) + 8px);
   }
-  .button_three,
-  .button_two {
-    font-size: calc(var(--body-font-size) + 9px);
-  }
-  .arrow,
+
   .button_one {
     display: none;
   }
+
   .button_two {
+    font-size: calc(var(--body-font-size) + 9px);
     margin-left: 0;
   }
+
   .button_three {
+    font-size: calc(var(--body-font-size) + 9px);
     display: inline-block;
     margin-right: 180px;
     margin-bottom: 30px;
   }
+
   .button_text_small {
     font-size: calc(var(--body-font-size) - 2px);
   }
+
+  .arrow {
+    display: none;
+  }
 }
+
+/* Following code takes care of the buttons in the intro section on /home for screen width of less than 1201px */
+
 @media screen and (max-width: 1200px) {
   .main_home {
     max-width: 600px;
-    margin: 7vh auto 13vh;
+    margin: auto;
+    margin-top: 7vh;
+    margin-bottom: 13vh;
   }
+
   .profile_text_big {
     font-size: calc(var(--body-font-size) + 35px);
   }
+
   .profile_text_small {
     font-size: calc(var(--body-font-size) + 6px);
   }
-  .button_three,
-  .button_two {
-    font-size: calc(var(--body-font-size) + 8px);
-  }
+
   .button_one {
     display: none;
   }
+
   .button_two {
+    font-size: calc(var(--body-font-size) + 8px);
     margin-top: 15px;
   }
-  .social-media-list li,
-  .social-media-list li:after {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-  }
-  .contact-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    max-width: 600px;
-  }
-  .direct-contact-container,
-  .form-horizontal {
-    margin: 0 auto;
-  }
-  .gmail,
-  .phone,
-  .place {
-    font-size: var(--body-font-size);
-    margin-left: 30px;
-  }
-  .direct-contact-container {
-    margin-top: 20px;
-    max-width: 300px;
-  }
-  .contact-list {
-    padding-left: 10px;
-    padding-right: 1px;
-  }
-  hr {
-    margin: auto;
-    width: 80%;
-  }
-  #contact {
-    margin-top: 8vh;
-    margin-bottom: 20vh;
+
+  .button_three {
+    font-size: calc(var(--body-font-size) + 8px);
   }
 }
+
+/* Following code takes care of the buttons in the intro section on /home for screen width of less than 901px */
+
 @media screen and (max-width: 900px) {
   .main_home {
     max-width: 500px;
-    margin: 5vh auto 11vh;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 11vh;
   }
+
   .profile_text_big {
     font-size: calc(var(--body-font-size) + 30px);
   }
+
   .profile_text_small {
     font-size: calc(var(--body-font-size) + 4px);
   }
-  .button_three,
-  .button_two {
-    font-size: calc(var(--body-font-size) + 7px);
-  }
+
   .button_one {
     display: none;
   }
+
+  .button_two {
+    font-size: calc(var(--body-font-size) + 7px);
+  }
+
   .button_three {
+    font-size: calc(var(--body-font-size) + 7px);
     display: inline-block;
     margin-right: 100px;
     margin-bottom: 30px;
   }
 }
+
+/* Following code takes care of the buttons in the intro section on /home for screen width of less than 769px */
+
 @media screen and (max-width: 768px) {
   .main_home {
     max-width: 450px;
-    margin: 3vh auto;
+    margin: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
   }
+
   .profile_text_big {
     font-size: calc(var(--body-font-size) + 25px);
   }
+
   .profile_text_small {
     font-size: calc(var(--body-font-size) + 2px);
   }
-  .button_three,
-  .button_two {
-    font-size: calc(var(--body-font-size) + 6px);
-  }
+
   .button_one {
     display: none;
   }
+
   .button_two {
+    font-size: calc(var(--body-font-size) + 6px);
     margin-top: 15px;
   }
+
   .button_three {
+    font-size: calc(var(--body-font-size) + 6px);
     display: inline-block;
     margin-right: 40px;
     margin-bottom: 30px;
   }
+}
+
+/* Begin media queries /contact - mediaq_contact */
+
+/* Begin media queries contact form */
+
+/* Following code is about the contact form for screen width of less than 1201px */
+
+@media screen and (max-width: 1200px) {
+  .contact-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-width: 600px;
+  }
+
+  .direct-contact-container,
+  .form-horizontal {
+    margin: 0 auto;
+  }
+
+  .place,
+  .phone,
+  .gmail {
+    font-size: var(--body-font-size);
+  }
+
+  .place {
+    margin-left: 30px;
+  }
+
+  .phone {
+    margin-left: 30px;
+  }
+
+  .gmail {
+    margin-left: 30px;
+  }
+
+  .direct-contact-container {
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  .contact-list {
+    padding-left: 10px;
+    padding-right: 1px;
+  }
+
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  hr {
+    margin: auto;
+    width: 80%;
+  }
+
+  #contact {
+    margin-top: 8vh;
+    margin-bottom: 20vh;
+  }
+}
+
+/* Following code is about the contact form for screen width of less than 769px */
+
+@media screen and (max-width: 768px) {
   .contact-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -874,47 +1170,59 @@ footer {
     justify-content: center;
     max-width: 450px;
   }
+
   .direct-contact-container,
   .form-horizontal {
     margin: 0 auto;
     max-width: 300px;
   }
+
   .form-control,
   textarea {
-    margin: 0 auto 8px;
+    margin: 0 auto;
     max-width: 300px;
+    margin-bottom: 8px;
   }
+
   .send-button {
     max-width: 300px;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
   }
+
   .alt-send-button {
     margin-left: auto;
   }
-  .gmail,
+
+  .place,
   .phone,
-  .place {
+  .gmail {
     font-size: var(--body-font-size);
   }
+
   .place {
     margin-left: 29px;
   }
+
   .phone {
     margin-left: 27px;
   }
+
   .gmail {
     margin-left: 26px;
   }
+
   .direct-contact-container {
     margin-top: 20px;
     max-width: 300px;
   }
+
   .contact-list {
     padding-left: 10px;
     padding-right: 1px;
   }
+
   .social-media-list {
     margin-top: 20px;
     display: -webkit-box;
@@ -929,15 +1237,29 @@ footer {
     -ms-flex-align: center;
     align-items: center;
   }
+
   .social-media-list li {
     height: 50px;
     width: 50px;
     list-style: none;
   }
+
   hr {
     margin: auto;
     width: 80%;
   }
+
+  /* .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  } */
+
   #contact {
     margin-top: 10vh;
     margin-bottom: 20vh;
